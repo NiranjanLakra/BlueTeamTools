@@ -1,6 +1,6 @@
 # PowerShell Script to Check Hashes in VirusTotal API
 param (
-    [string]$apiKey = "0a70717ae4f34fadc3debabfe7b08161793632b882ff62943b9a9fb4f1d822a6",                  # Your VirusTotal API Key
+    [string]$apiKey = "Your API Key from Virustotal",                  # Your VirusTotal API Key
     [string]$hashFile = "C:\Users\niran\Desktop\hashes.txt"   # File containing list of hashes (one per line)
 )
 
