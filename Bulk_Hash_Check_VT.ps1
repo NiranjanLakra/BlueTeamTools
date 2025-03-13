@@ -1,7 +1,7 @@
 # PowerShell Script to Check Hashes in VirusTotal API
 param (
-    [string]$apiKey,                  # Your VirusTotal API Key
-    [string]$hashFile = "hashes.txt"   # File containing list of hashes (one per line)
+    [string]$apiKey = "0a70717ae4f34fadc3debabfe7b08161793632b882ff62943b9a9fb4f1d822a6",                  # Your VirusTotal API Key
+    [string]$hashFile = "C:\Users\niran\Desktop\hashes.txt"   # File containing list of hashes (one per line)
 )
 
 # Ensure API key is provided
@@ -38,13 +38,10 @@ foreach ($hash in $hashes) {
         Write-Output "Hash: $hash"
         Write-Output "File Name: $fileName"
         Write-Output "Category: $category"
-        Write-Output "Detections: "
-        $detections.GetEnumerator() | ForEach-Object {
-            Write-Output "  $($_.Key): $($_.Value)"
-        }
+        Write-Output "Detections: $detections"
         Write-Output "-------------------------"
     } catch {
-        Write-Host "Error checking hash $hash: $_" -ForegroundColor Yellow
+        Write-Host "Error checking hash $hash : $_" -ForegroundColor Yellow
     }
 
     # Rate limit handling: Pause after every 4 requests
